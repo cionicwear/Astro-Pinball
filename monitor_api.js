@@ -14,7 +14,7 @@ MonitorAPI.initApis = function() {
     if (window.isCionicGame) {
         MonitorAPI.MONITORS_URL = `/a/v${MonitorAPI.VERSION}/${MonitorAPI.orgname}/monitors`;
     } else {
-        const BASE = 'https://alpha.cionic.com';
+        const BASE = 'https://cionic.com';
         const ORG = 'cionic'
         MonitorAPI.MONITORS_URL = `${BASE}/a/v${MonitorAPI.VERSION}/${ORG}/monitors`;
     }
