@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Astro Pinball</title>
-      <link rel="stylesheet" type="text/css" href="./assets/pinball.css">
-      <script type="text/javascript" src="./jquery-3.1.0.js"></script>
-      <script type="text/javascript" src="./cionic.min.js" charset="utf-8"></script>
-      <script type="text/javascript" src="bundle.js" charset="utf-8"></script> 
-      <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-      <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-
+    <script type="text/javascript">
+      window.isCionicGame = window.location.href.includes('games');
+      let root = window.isCionicGame ? '/static/pinball' : '.';
+      document.write(`<link rel="stylesheet" type="text/css" href="${root}/assets/pinball.css">`);
+      document.write(`<script type="text/javascript" src="${root}/jquery-3.1.0.js"></s` + 'cript>');
+      document.write(`<script type="text/javascript" src="${root}/cionic.min.js" charset="utf-8"></` + 'script>');
+      document.write(`<script type="text/javascript" src="${root}/basics.js"></sc` + 'ript>');
+      document.write(`<script type="text/javascript" src="${root}/bundle.js" charset="utf-8"></sc` + 'ript>');
+      document.write(`<script type="text/javascript" src="${root}/monitor_api.js"></scr` + 'ipt>');
+      document.write(`<link rel="icon" type="image/png" href="${root}/favicon-32x32.png" sizes="32x32" />`);
+      document.write(`<link rel="icon" type="image/png" href="${root}/favicon-16x16.png" sizes="16x16" />`);
+    </script>    
+    
     <link href="https://fonts.googleapis.com/css?family=Bungee+Outline" rel="stylesheet">
     <script src="https://use.fontawesome.com/147c19f748.js"></script>
   </head>
@@ -36,6 +42,8 @@
         </div>
     </div>
 
+    <div><h1 class="codeText" id="code">fetching code </h1></div>
+
     <div id="cionic-container">
       <input type="text" name="host" id="host" style="width:150px" value="localhost:8080"/>
       <input type="button" id="cionic-connect" value="Connect"/>
@@ -49,15 +57,15 @@
     </audio>
 
     <audio id='bell'>
-      <source src="assets/ring.wav" type="audio/wav">
+      <source src="./assets/ring.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id='thud'>
-      <source src="assets/thud.wav" type="audio/wav">
+      <source src="./assets/thud.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <audio id='flip'>
-      <source src="assets/softflip.wav" type="audio/wav">
+      <source src="./assets/softflip.wav" type="audio/wav">
       Your browser does not support the audio element.
     </audio>
     <img src="http://res.cloudinary.com/dqr2mejhc/image/upload/c_scale,w_50/v1497826074/moon-5_nejqh7.png" id='moon'/>
