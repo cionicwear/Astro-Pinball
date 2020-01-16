@@ -5,7 +5,7 @@
     <title>Astro Pinball</title>
       <link rel="stylesheet" type="text/css" href="./assets/pinball.css">
       <script type="text/javascript" src="./jquery-3.1.0.js"></script>
-      <script type="text/javascript" src="./cionic.min.js" charset="utf-8"></script>
+      <script type="text/javascript" src="./cionic.js" charset="utf-8"></script>
       <script type="text/javascript" src="bundle.js" charset="utf-8"></script> 
       <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
       <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -39,6 +39,7 @@
     <div id="cionic-container">
       <input type="text" name="host" id="host" style="width:150px" value="localhost:8080"/>
       <input type="button" id="cionic-connect" value="Connect"/>
+      <button id="ble">Bluetooth Connect</button>
       <div id="log"></div>
     </div>
 
